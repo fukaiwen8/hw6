@@ -2,20 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Insert your name here">
+<meta name="author" content="Kaiwen Fu">
 
 <title>Homework 6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -42,43 +48,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -93,6 +69,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="hw6_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="hw6_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -112,17 +89,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p><span style="background-color: yellow;">Insert your name here</span> </p>
+               <p><span style="background-color: yellow;">Kaiwen Fu</span> </p>
             </div>
     </div>
       
+    
       
     </div>
     
   
   </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc">
+  <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -135,16 +113,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled" style="font-size: 0.8em;">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
-<div class="callout-body-container callout-body" style="font-size: 0.8em;">
+<div class="callout-body-container callout-body">
 <p>Please read the instructions carefully before submitting your assignment.</p>
 <ol type="1">
 <li>This assignment requires you to only upload a <code>PDF</code> file on Canvas</li>
@@ -175,12 +153,12 @@ Important
 <hr>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 70 points
 </div>
 </div>
@@ -200,77 +178,483 @@ Important
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"data/spending.csv"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> ... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-2_2661c9de80eb7ad9724da1c40484d611">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"data/spending.csv"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(path) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.character, as.factor) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_all</span>(tolower) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 5000 Columns: 40
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (40): accessories, accommodation, alcohol, audio_equipment, beverages, b...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
 <hr>
 </section>
 <section id="points-2" class="level6">
 <h6 class="anchored" data-anchor-id="points-2">1.2 (5 points)</h6>
 <p>Visualize the correlation between the variables using the <code>corrplot()</code> function. What do you observe? What does this mean for the model?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_x  <span class="sc">%&gt;%</span> ... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_x  <span class="sc">%&gt;%</span> ... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-3_939ab353923313dcf2ab782f98cd8205">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>corrplot 0.92 loaded</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">one_of</span>(<span class="st">"income"</span>)))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(correlation_matrix, <span class="at">method =</span> <span class="st">"circle"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="hw6_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <hr>
 </section>
 <section id="points-3" class="level6">
 <h6 class="anchored" data-anchor-id="points-3">1.3 (5 points)</h6>
 <p>Run a linear regression model to predict the <code>income</code> variable using the remaining predictors. Interpret the coefficients and summarize your results.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-4_dd8a91df6fd72fb17befbe339cd8d619">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'car'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    some</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    recode</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> ., <span class="at">data =</span> df)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = income ~ ., data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.6875 -1.6569  0.0427  1.6633  9.5623 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)           -0.077509   0.121730  -0.637 0.524330    
+accessories            0.299876   0.031786   9.434  &lt; 2e-16 ***
+accommodation          0.113632   0.031262   3.635 0.000281 ***
+alcohol               -0.005958   0.033266  -0.179 0.857873    
+audio_equipment        0.602004   0.033483  17.979  &lt; 2e-16 ***
+beverages              0.043335   0.034111   1.270 0.204000    
+books                  0.070530   0.033238   2.122 0.033892 *  
+cameras                0.461827   0.033572  13.756  &lt; 2e-16 ***
+car_rentals            0.124875   0.032809   3.806 0.000143 ***
+clothing               0.504228   0.026055  19.352  &lt; 2e-16 ***
+coffee_shops           0.048839   0.034909   1.399 0.161864    
+dairy_products         0.024548   0.032715   0.750 0.453082    
+desktops               0.391673   0.033393  11.729  &lt; 2e-16 ***
+electronics            1.079627   0.030035  35.946  &lt; 2e-16 ***
+fast_food              0.077531   0.033014   2.348 0.018893 *  
+food_delivery         -0.004903   0.034257  -0.143 0.886188    
+fruits                 0.059089   0.033321   1.773 0.076237 .  
+groceries              0.077694   0.031601   2.459 0.013981 *  
+gym_memberships        0.141168   0.033410   4.225 2.43e-05 ***
+jewelry                0.213726   0.032834   6.509 8.30e-11 ***
+laptops                0.594328   0.032548  18.260  &lt; 2e-16 ***
+magazines              0.080762   0.033694   2.397 0.016571 *  
+meat                   0.081262   0.032367   2.511 0.012083 *  
+movies                 0.110296   0.033326   3.310 0.000941 ***
+music                  0.159925   0.033398   4.788 1.73e-06 ***
+outdoor_activities     0.087846   0.032356   2.715 0.006651 ** 
+public_transportation  0.061138   0.033022   1.851 0.064169 .  
+restaurant_meals       0.066129   0.033225   1.990 0.046611 *  
+seafood                0.061318   0.033786   1.815 0.069596 .  
+shoes                  0.463185   0.029613  15.641  &lt; 2e-16 ***
+smartphones            0.780150   0.031538  24.737  &lt; 2e-16 ***
+snacks                 0.007464   0.033229   0.225 0.822290    
+software               0.408500   0.034102  11.979  &lt; 2e-16 ***
+sports_equipment       0.033328   0.033969   0.981 0.326574    
+streaming_services     0.150614   0.031902   4.721 2.41e-06 ***
+tablets                0.637266   0.033133  19.234  &lt; 2e-16 ***
+travel                 0.129161   0.031457   4.106 4.09e-05 ***
+vegetables            -0.066111   0.033162  -1.994 0.046257 *  
+video_games            0.863309   0.031392  27.501  &lt; 2e-16 ***
+watches                0.145853   0.033467   4.358 1.34e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.434 on 4960 degrees of freedom
+Multiple R-squared:  0.9999,    Adjusted R-squared:  0.9999 
+F-statistic: 1.834e+06 on 39 and 4960 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
 <hr>
 </section>
 <section id="points-4" class="level6">
 <h6 class="anchored" data-anchor-id="points-4">1.3 (5 points)</h6>
 <p>Diagnose the model using the <code>vif()</code> function. What do you observe? What does this mean for the model?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-5_ab2afb64afc58b8c57c038c725ecd970">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>vif_values <span class="ot">&lt;-</span> <span class="fu">vif</span>(model) </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(vif_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          accessories         accommodation               alcohol 
+            152.06821             681.15504             387.23376 
+      audio_equipment             beverages                 books 
+           1755.56441             914.69186             192.91781 
+              cameras           car_rentals              clothing 
+            785.43147             423.55906             282.25143 
+         coffee_shops        dairy_products              desktops 
+            425.39644            2336.74847             776.75697 
+          electronics             fast_food         food_delivery 
+           3927.16511            1519.85171             921.68162 
+               fruits             groceries       gym_memberships 
+           1550.05678            3136.80325             438.30224 
+              jewelry               laptops             magazines 
+             72.38215            1658.76990             198.53619 
+                 meat                movies                 music 
+           2284.43676             437.28082             437.03990 
+   outdoor_activities public_transportation      restaurant_meals 
+            411.17302             427.77815            1540.26240 
+              seafood                 shoes           smartphones 
+           1594.08027             233.33301            2772.27822 
+               snacks              software      sports_equipment 
+            868.24282             810.28919             201.00255 
+   streaming_services               tablets                travel 
+            709.25592            1718.78339             690.69616 
+           vegetables           video_games               watches 
+           1536.40686            2745.64421              75.56457 </code></pre>
+</div>
+</div>
 <hr>
 </section>
 <section id="points-5" class="level6">
 <h6 class="anchored" data-anchor-id="points-5">1.4 (5 points)</h6>
 <p>Perform PCA using the <code>princomp</code> function in R. Print the summary of the PCA object.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> ... <span class="co"># Insert your code here</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> ... <span class="co"># Insert your code here</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-6_2b26cb5154e211e3b3f9f277de2529fc">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(df[, <span class="sc">-</span><span class="fu">which</span>(<span class="fu">names</span>(df) <span class="sc">==</span> <span class="st">"income"</span>)], <span class="at">scale. =</span> <span class="cn">TRUE</span>)  </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Importance of components:
+                         PC1    PC2    PC3    PC4     PC5     PC6     PC7
+Standard deviation     3.620 3.4480 2.9940 2.2289 0.11257 0.09606 0.07083
+Proportion of Variance 0.336 0.3048 0.2298 0.1274 0.00032 0.00024 0.00013
+Cumulative Proportion  0.336 0.6409 0.8707 0.9981 0.99842 0.99866 0.99879
+                           PC8     PC9    PC10    PC11    PC12    PC13    PC14
+Standard deviation     0.06915 0.06702 0.06532 0.05099 0.04981 0.04762 0.04699
+Proportion of Variance 0.00012 0.00012 0.00011 0.00007 0.00006 0.00006 0.00006
+Cumulative Proportion  0.99891 0.99902 0.99913 0.99920 0.99926 0.99932 0.99938
+                          PC15    PC16    PC17    PC18    PC19    PC20    PC21
+Standard deviation     0.04611 0.04590 0.04553 0.04517 0.03944 0.03586 0.03505
+Proportion of Variance 0.00005 0.00005 0.00005 0.00005 0.00004 0.00003 0.00003
+Cumulative Proportion  0.99943 0.99949 0.99954 0.99959 0.99963 0.99966 0.99970
+                          PC22    PC23    PC24    PC25    PC26    PC27    PC28
+Standard deviation     0.03461 0.03435 0.03298 0.03240 0.03136 0.02977 0.02509
+Proportion of Variance 0.00003 0.00003 0.00003 0.00003 0.00003 0.00002 0.00002
+Cumulative Proportion  0.99973 0.99976 0.99979 0.99981 0.99984 0.99986 0.99988
+                          PC29    PC30    PC31    PC32    PC33    PC34    PC35
+Standard deviation     0.02460 0.02427 0.02375 0.02334 0.02283 0.02119 0.01969
+Proportion of Variance 0.00002 0.00002 0.00001 0.00001 0.00001 0.00001 0.00001
+Cumulative Proportion  0.99989 0.99991 0.99992 0.99994 0.99995 0.99996 0.99997
+                          PC36    PC37    PC38    PC39
+Standard deviation     0.01938 0.01743 0.01678 0.01464
+Proportion of Variance 0.00001 0.00001 0.00001 0.00001
+Cumulative Proportion  0.99998 0.99999 0.99999 1.00000</code></pre>
+</div>
+</div>
 <hr>
 </section>
 <section id="points-6" class="level6">
 <h6 class="anchored" data-anchor-id="points-6">1.5 (5 points)</h6>
 <p>Make a screeplot of the proportion of variance explained by each principal component. How many principal components would you choose to keep? Why?</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-7_9cc3db3e8230b6cd60a41833371bf427">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screeplot</span>(pca, <span class="at">type =</span> <span class="st">"lines"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="hw6_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 <section id="points-7" class="level6">
 <h6 class="anchored" data-anchor-id="points-7">1.6 (5 points)</h6>
 <p>By setting any factor loadings below <span class="math inline">\(0.2\)</span> to <span class="math inline">\(0\)</span>, summarize the factor loadings for the principal components that you chose to keep.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>clean_loadings <span class="ot">&lt;-</span> ... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>clean_loadings <span class="ot">&lt;-</span> ... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-8_4a1f0253af9a397224812961f3b82979">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>loadings <span class="ot">&lt;-</span> pca<span class="sc">$</span>rotation </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>clean_loadings <span class="ot">&lt;-</span> <span class="fu">apply</span>(loadings, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">ifelse</span>(<span class="fu">abs</span>(x) <span class="sc">&lt;</span> <span class="fl">0.2</span>, <span class="dv">0</span>, x))</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>clean_loadings <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(clean_loadings)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(clean_loadings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      PC1                PC2               PC3               PC4         
+ Min.   :-0.26598   Min.   :0.00000   Min.   :0.00000   Min.   :0.00000  
+ 1st Qu.:-0.26586   1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.00000  
+ Median : 0.00000   Median :0.00000   Median :0.00000   Median :0.00000  
+ Mean   :-0.08863   Mean   :0.08513   Mean   :0.07652   Mean   :0.05731  
+ 3rd Qu.: 0.00000   3rd Qu.:0.27647   3rd Qu.:0.00000   3rd Qu.:0.00000  
+ Max.   : 0.00000   Max.   :0.27685   Max.   :0.33165   Max.   :0.44775  
+      PC5                 PC6                  PC7           
+ Min.   :-0.740563   Min.   :-0.4948741   Min.   :-0.821318  
+ 1st Qu.: 0.000000   1st Qu.: 0.0000000   1st Qu.: 0.000000  
+ Median : 0.000000   Median : 0.0000000   Median : 0.000000  
+ Mean   :-0.001826   Mean   : 0.0000726   Mean   :-0.002436  
+ 3rd Qu.: 0.000000   3rd Qu.: 0.0000000   3rd Qu.: 0.000000  
+ Max.   : 0.669352   Max.   : 0.5851501   Max.   : 0.467742  
+      PC8                 PC9                 PC10              PC11          
+ Min.   :-0.771848   Min.   :-0.537467   Min.   :0.00000   Min.   :-0.538441  
+ 1st Qu.: 0.000000   1st Qu.: 0.000000   1st Qu.:0.00000   1st Qu.: 0.000000  
+ Median : 0.000000   Median : 0.000000   Median :0.00000   Median : 0.000000  
+ Mean   :-0.005287   Mean   :-0.005085   Mean   :0.03787   Mean   : 0.006383  
+ 3rd Qu.: 0.000000   3rd Qu.: 0.000000   3rd Qu.:0.00000   3rd Qu.: 0.000000  
+ Max.   : 0.565668   Max.   : 0.692994   Max.   :0.59806   Max.   : 0.787380  
+      PC12                PC13                PC14           
+ Min.   :-0.579541   Min.   :-0.336898   Min.   :-0.5446377  
+ 1st Qu.: 0.000000   1st Qu.: 0.000000   1st Qu.: 0.0000000  
+ Median : 0.000000   Median : 0.000000   Median : 0.0000000  
+ Mean   : 0.004501   Mean   :-0.003115   Mean   :-0.0009384  
+ 3rd Qu.: 0.000000   3rd Qu.: 0.000000   3rd Qu.: 0.0000000  
+ Max.   : 0.755064   Max.   : 0.814804   Max.   : 0.7467035  
+      PC15                PC16                PC17                PC18         
+ Min.   :-0.683116   Min.   :-0.806816   Min.   :-0.602347   Min.   :-0.70816  
+ 1st Qu.: 0.000000   1st Qu.: 0.000000   1st Qu.: 0.000000   1st Qu.: 0.00000  
+ Median : 0.000000   Median : 0.000000   Median : 0.000000   Median : 0.00000  
+ Mean   : 0.004347   Mean   :-0.007643   Mean   :-0.002177   Mean   :-0.02783  
+ 3rd Qu.: 0.000000   3rd Qu.: 0.000000   3rd Qu.: 0.000000   3rd Qu.: 0.00000  
+ Max.   : 0.607434   Max.   : 0.298732   Max.   : 0.525169   Max.   : 0.29443  
+      PC19               PC20               PC21                 PC22          
+ Min.   :-0.51848   Min.   :-0.40876   Min.   :-0.5261212   Min.   :-0.656844  
+ 1st Qu.: 0.00000   1st Qu.: 0.00000   1st Qu.: 0.0000000   1st Qu.: 0.000000  
+ Median : 0.00000   Median : 0.00000   Median : 0.0000000   Median : 0.000000  
+ Mean   :-0.01196   Mean   : 0.00123   Mean   : 0.0009883   Mean   : 0.003128  
+ 3rd Qu.: 0.00000   3rd Qu.: 0.00000   3rd Qu.: 0.0000000   3rd Qu.: 0.000000  
+ Max.   : 0.26184   Max.   : 0.76001   Max.   : 0.5947233   Max.   : 0.592783  
+      PC23                PC24               PC25                PC26          
+ Min.   :-0.717261   Min.   :-0.77145   Min.   :-0.769133   Min.   :-0.308349  
+ 1st Qu.: 0.000000   1st Qu.: 0.00000   1st Qu.: 0.000000   1st Qu.: 0.000000  
+ Median : 0.000000   Median : 0.00000   Median : 0.000000   Median : 0.000000  
+ Mean   :-0.005734   Mean   :-0.01071   Mean   : 0.001659   Mean   : 0.008854  
+ 3rd Qu.: 0.000000   3rd Qu.: 0.00000   3rd Qu.: 0.000000   3rd Qu.: 0.000000  
+ Max.   : 0.462320   Max.   : 0.56745   Max.   : 0.518733   Max.   : 0.539664  
+      PC27               PC28                PC29                PC30          
+ Min.   :-0.27415   Min.   :-0.554410   Min.   :-0.561347   Min.   :-0.506343  
+ 1st Qu.: 0.00000   1st Qu.: 0.000000   1st Qu.: 0.000000   1st Qu.: 0.000000  
+ Median : 0.00000   Median : 0.000000   Median : 0.000000   Median : 0.000000  
+ Mean   : 0.01221   Mean   :-0.004509   Mean   : 0.002872   Mean   : 0.008483  
+ 3rd Qu.: 0.00000   3rd Qu.: 0.000000   3rd Qu.: 0.000000   3rd Qu.: 0.000000  
+ Max.   : 0.52294   Max.   : 0.723689   Max.   : 0.550394   Max.   : 0.837194  
+      PC31                 PC32                PC33          
+ Min.   :-0.3779785   Min.   :-0.743261   Min.   :-0.605918  
+ 1st Qu.: 0.0000000   1st Qu.: 0.000000   1st Qu.: 0.000000  
+ Median : 0.0000000   Median : 0.000000   Median : 0.000000  
+ Mean   :-0.0002318   Mean   : 0.005542   Mean   :-0.002821  
+ 3rd Qu.: 0.0000000   3rd Qu.: 0.000000   3rd Qu.: 0.000000  
+ Max.   : 0.7480133   Max.   : 0.469667   Max.   : 0.727543  
+      PC34                PC35                PC36          
+ Min.   :-0.605517   Min.   :-0.415462   Min.   :-0.757584  
+ 1st Qu.: 0.000000   1st Qu.: 0.000000   1st Qu.: 0.000000  
+ Median : 0.000000   Median : 0.000000   Median : 0.000000  
+ Mean   :-0.008035   Mean   : 0.003669   Mean   :-0.003335  
+ 3rd Qu.: 0.000000   3rd Qu.: 0.000000   3rd Qu.: 0.000000  
+ Max.   : 0.279453   Max.   : 0.526607   Max.   : 0.627514  
+      PC37                PC38               PC39          
+ Min.   :-0.680988   Min.   :-0.28635   Min.   :-0.896798  
+ 1st Qu.: 0.000000   1st Qu.: 0.00000   1st Qu.: 0.000000  
+ Median : 0.000000   Median : 0.00000   Median : 0.000000  
+ Mean   : 0.000629   Mean   : 0.01014   Mean   :-0.008092  
+ 3rd Qu.: 0.000000   3rd Qu.: 0.00000   3rd Qu.: 0.000000  
+ Max.   : 0.705519   Max.   : 0.89907   Max.   : 0.295363  </code></pre>
+</div>
+</div>
 <p>Visualize the factor loadings.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-9_1726db92549efcc60dd3fe5ce0e588b9">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>long_loadings <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(clean_loadings, <span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">'Variable'</span>, <span class="at">values_to =</span> <span class="st">'Loading'</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(long_loadings, <span class="fu">aes</span>(<span class="at">x =</span> Variable, <span class="at">y =</span> Loading, <span class="at">fill =</span> Variable)) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Factor Loadings Visualization"</span>, <span class="at">x =</span> <span class="st">"Principal Component"</span>, <span class="at">y =</span> <span class="st">"Loading"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="hw6_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <hr>
 </section>
 <section id="points-8" class="level6">
 <h6 class="anchored" data-anchor-id="points-8">1.7 (15 points)</h6>
 <p>Based on the factor loadings, what do you think the principal components represent?</p>
 <p>Provide an interpreation for each principal component you chose to keep.</p>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-10_8b31a90fbf36f39c49838d70c740731a">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Principal component analysis is like finding the best angle to take a collective photo of a group of items so that you can see the most obvious differences at a glance. Each angle, or principal component, reveals a different characteristic between the items: the first angle shows the most fundamental difference, the second angle the second most important difference, and so on.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <hr>
 </section>
 <section id="points-9" class="level6">
 <h6 class="anchored" data-anchor-id="points-9">1.8 (10 points)</h6>
 <p>Create a new data frame with the original response variable <code>income</code> and the principal components you chose to keep. Call this data frame <code>df_pca</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-11_856a045faa128d3c5dba0fbf44143473">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>num_components <span class="ot">&lt;-</span> <span class="dv">3</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df_pca <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">income =</span> df<span class="sc">$</span>income, pca<span class="sc">$</span>x[, <span class="dv">1</span><span class="sc">:</span>num_components])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Fit a regression model to predict the <code>income</code> variable using the principal components you chose to keep. Interpret the coefficients and summarize your results.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-12_23b3bc02f6362d5239f7cf93bc3e7a96">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>model_pca <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> ., <span class="at">data =</span> df_pca)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_pca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = income ~ ., data = df_pca)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-44.345 -18.599  -0.293  18.730  47.846 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 628.17783    0.30371  2068.4   &lt;2e-16 ***
+PC1         -13.33704    0.08390  -159.0   &lt;2e-16 ***
+PC2          -1.16315    0.08809   -13.2   &lt;2e-16 ***
+PC3          95.59503    0.10145   942.3   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 21.48 on 4996 degrees of freedom
+Multiple R-squared:  0.9946,    Adjusted R-squared:  0.9946 
+F-statistic: 3.044e+05 on 3 and 4996 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
 <p>Compare the results of the regression model in 1.3 and 1.9. What do you observe? What does this mean for the model?</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># Insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-13_bace1f8b2020c3f5b4c574eb7b76bce9">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = income ~ ., data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.6875 -1.6569  0.0427  1.6633  9.5623 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)           -0.077509   0.121730  -0.637 0.524330    
+accessories            0.299876   0.031786   9.434  &lt; 2e-16 ***
+accommodation          0.113632   0.031262   3.635 0.000281 ***
+alcohol               -0.005958   0.033266  -0.179 0.857873    
+audio_equipment        0.602004   0.033483  17.979  &lt; 2e-16 ***
+beverages              0.043335   0.034111   1.270 0.204000    
+books                  0.070530   0.033238   2.122 0.033892 *  
+cameras                0.461827   0.033572  13.756  &lt; 2e-16 ***
+car_rentals            0.124875   0.032809   3.806 0.000143 ***
+clothing               0.504228   0.026055  19.352  &lt; 2e-16 ***
+coffee_shops           0.048839   0.034909   1.399 0.161864    
+dairy_products         0.024548   0.032715   0.750 0.453082    
+desktops               0.391673   0.033393  11.729  &lt; 2e-16 ***
+electronics            1.079627   0.030035  35.946  &lt; 2e-16 ***
+fast_food              0.077531   0.033014   2.348 0.018893 *  
+food_delivery         -0.004903   0.034257  -0.143 0.886188    
+fruits                 0.059089   0.033321   1.773 0.076237 .  
+groceries              0.077694   0.031601   2.459 0.013981 *  
+gym_memberships        0.141168   0.033410   4.225 2.43e-05 ***
+jewelry                0.213726   0.032834   6.509 8.30e-11 ***
+laptops                0.594328   0.032548  18.260  &lt; 2e-16 ***
+magazines              0.080762   0.033694   2.397 0.016571 *  
+meat                   0.081262   0.032367   2.511 0.012083 *  
+movies                 0.110296   0.033326   3.310 0.000941 ***
+music                  0.159925   0.033398   4.788 1.73e-06 ***
+outdoor_activities     0.087846   0.032356   2.715 0.006651 ** 
+public_transportation  0.061138   0.033022   1.851 0.064169 .  
+restaurant_meals       0.066129   0.033225   1.990 0.046611 *  
+seafood                0.061318   0.033786   1.815 0.069596 .  
+shoes                  0.463185   0.029613  15.641  &lt; 2e-16 ***
+smartphones            0.780150   0.031538  24.737  &lt; 2e-16 ***
+snacks                 0.007464   0.033229   0.225 0.822290    
+software               0.408500   0.034102  11.979  &lt; 2e-16 ***
+sports_equipment       0.033328   0.033969   0.981 0.326574    
+streaming_services     0.150614   0.031902   4.721 2.41e-06 ***
+tablets                0.637266   0.033133  19.234  &lt; 2e-16 ***
+travel                 0.129161   0.031457   4.106 4.09e-05 ***
+vegetables            -0.066111   0.033162  -1.994 0.046257 *  
+video_games            0.863309   0.031392  27.501  &lt; 2e-16 ***
+watches                0.145853   0.033467   4.358 1.34e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.434 on 4960 degrees of freedom
+Multiple R-squared:  0.9999,    Adjusted R-squared:  0.9999 
+F-statistic: 1.834e+06 on 39 and 4960 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_pca)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = income ~ ., data = df_pca)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-44.345 -18.599  -0.293  18.730  47.846 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 628.17783    0.30371  2068.4   &lt;2e-16 ***
+PC1         -13.33704    0.08390  -159.0   &lt;2e-16 ***
+PC2          -1.16315    0.08809   -13.2   &lt;2e-16 ***
+PC3          95.59503    0.10145   942.3   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 21.48 on 4996 degrees of freedom
+Multiple R-squared:  0.9946,    Adjusted R-squared:  0.9946 
+F-statistic: 3.044e+05 on 3 and 4996 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
 <hr>
 </section>
 <section id="points-10" class="level6">
 <h6 class="anchored" data-anchor-id="points-10">1.10 (10 points)</h6>
 <p>Based on your interpretation of the principal components from Question 1.7, provide an interpretation of the regression model in Question 1.9.</p>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-14_9a6e7207301590ab6195678f92853895">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Comparing the results of the two models, I found that the model simplified through principal component analysis predicts revenue very well, and this approach also reduces the number of variables required. While such a model may not be easy to understand intuitively because it is built based on abstract features of the data, it provides us with a more refined and potentially more stable method of prediction.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <hr>
 <div class="hidden" data-unless-format="pdf">
 <div style="page-break-after: always;"></div>
 </div>
 <p><br><br><br><br> <br><br><br><br></p>
 <hr>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Session Information
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -278,36 +662,46 @@ Session Information
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Print your <code>R</code> session information using the following command</p>
-<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-2_4d3f92a02111bdcbc0702e1b6feca305">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="hw6_cache/html/unnamed-chunk-15_72abf6daac095747791cf06410595371">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.2 (2022-10-31)
-Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Ventura 13.0
+<pre><code>R version 4.3.3 (2024-02-29 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 11 x64 (build 22631)
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/lib/libRlapack.dylib
+
 
 locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+[1] LC_COLLATE=Chinese (Simplified)_China.utf8 
+[2] LC_CTYPE=Chinese (Simplified)_China.utf8   
+[3] LC_MONETARY=Chinese (Simplified)_China.utf8
+[4] LC_NUMERIC=C                               
+[5] LC_TIME=Chinese (Simplified)_China.utf8    
+
+time zone: America/New_York
+tzcode source: internal
 
 attached base packages:
-[1] stats     graphics  grDevices datasets  utils     methods   base     
+[1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] magrittr_2.0.3 broom_1.0.5    purrr_1.0.2    tidyr_1.3.1    readr_2.1.5   
-[6] dplyr_1.1.4    tibble_3.2.1  
+ [1] ggplot2_3.5.0  car_3.1-2      carData_3.0-5  corrplot_0.92  magrittr_2.0.3
+ [6] broom_1.0.5    purrr_1.0.2    tidyr_1.3.1    readr_2.1.5    dplyr_1.1.3   
+[11] tibble_3.2.1  
 
 loaded via a namespace (and not attached):
- [1] rstudioapi_0.15.0 knitr_1.45        hms_1.1.3         tidyselect_1.2.0 
- [5] R6_2.5.1          rlang_1.1.3       fastmap_1.1.1     fansi_1.0.6      
- [9] tools_4.2.2       xfun_0.41         utf8_1.2.4        cli_3.6.2        
-[13] htmltools_0.5.7   yaml_2.3.8        digest_0.6.34     lifecycle_1.0.4  
-[17] tzdb_0.4.0        codetools_0.2-18  htmlwidgets_1.6.4 vctrs_0.6.5      
-[21] glue_1.7.0        evaluate_0.23     rmarkdown_2.25    compiler_4.2.2   
-[25] pillar_1.9.0      backports_1.4.1   generics_0.1.3    jsonlite_1.8.8   
-[29] renv_1.0.3        pkgconfig_2.0.3  </code></pre>
+ [1] bit_4.0.5         gtable_0.3.4      jsonlite_1.8.8    compiler_4.3.3   
+ [5] crayon_1.5.2      tidyselect_1.2.1  parallel_4.3.3    scales_1.3.0     
+ [9] yaml_2.3.8        fastmap_1.1.1     R6_2.5.1          labeling_0.4.3   
+[13] generics_0.1.3    knitr_1.45        backports_1.4.1   munsell_0.5.1    
+[17] pillar_1.9.0      tzdb_0.4.0        rlang_1.1.1       utf8_1.2.4       
+[21] xfun_0.43         bit64_4.0.5       cli_3.6.1         withr_3.0.0      
+[25] grid_4.3.3        digest_0.6.33     vroom_1.6.5       rstudioapi_0.16.0
+[29] hms_1.1.3         lifecycle_1.0.4   vctrs_0.6.4       evaluate_0.23    
+[33] glue_1.6.2        farver_2.1.1      codetools_0.2-19  abind_1.4-5      
+[37] colorspace_2.1-0  fansi_1.0.5       rmarkdown_2.26    tools_4.3.3      
+[41] pkgconfig_2.0.3   htmltools_0.5.8  </code></pre>
 </div>
 </div>
 </div>
@@ -345,9 +739,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -359,7 +767,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -387,31 +812,136 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

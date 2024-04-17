@@ -1,6 +1,6 @@
 ---
 title: "Homework 6"
-author: "[Insert your name here]{style='background-color: yellow;'}"
+author: "[Kaiwen Fu]{style='background-color: yellow;'}"
 toc: true
 title-block-banner: true
 title-block-style: default
@@ -73,6 +73,18 @@ path <- "data/spending.csv"
 
 df <- ... # Insert your code here
 ```
+```{R}
+library(tibble)
+library(dplyr)
+library(readr)
+
+path <- "data/spending.csv"
+df <- read_csv(path) %>%
+  mutate_if(is.character, as.factor) %>%
+  rename_all(tolower) %>% 
+  drop_na()  
+
+```
 
 ---
 
@@ -82,6 +94,13 @@ Visualize the correlation between the variables using the `corrplot()` function.
 
 ```R
 df_x  %>% ... # Insert your code here
+```
+```{R}
+library(corrplot)
+correlation_matrix <- cor(df %>% select(-one_of("income")))
+
+corrplot(correlation_matrix, method = "circle")
+
 ```
 
 ---
@@ -94,6 +113,13 @@ Run a linear regression model to predict the `income` variable using the remaini
 ```R
 ... # Insert your code here
 ```
+```{R}
+library(car)
+
+model <- lm(income ~ ., data = df)
+summary(model) 
+
+```
 
 ---
 
@@ -103,6 +129,11 @@ Diagnose the model using the `vif()` function. What do you observe? What does th
 
 ```R
 ... # Insert your code here
+```
+```{R}
+vif_values <- vif(model) 
+print(vif_values)
+
 ```
 
 ---
@@ -115,6 +146,11 @@ Perform PCA using the `princomp` function in R. Print the summary of the PCA obj
 pca <- ... # Insert your code here
 ... # Insert your code here
 ```
+```{R}
+pca <- prcomp(df[, -which(names(df) == "income")], scale. = TRUE)  
+summary(pca) 
+
+```
 
 ---
 
@@ -125,6 +161,10 @@ Make a screeplot of the proportion of variance explained by each principal compo
 ```R
 ... # Insert your code here
 ```
+```{R}
+screeplot(pca, type = "lines")
+
+```
 
 
 ###### 1.6 (5 points)
@@ -134,12 +174,38 @@ By setting any factor loadings below $0.2$ to $0$, summarize the factor loadings
 ```R
 clean_loadings <- ... # Insert your code here
 ```
+```{R}
+loadings <- pca$rotation 
+
+clean_loadings <- apply(loadings, 2, function(x) ifelse(abs(x) < 0.2, 0, x))
+
+clean_loadings <- as.data.frame(clean_loadings)
+
+summary(clean_loadings)
+
+
+
+```
 
 
 Visualize the factor loadings. 
 
 ```R
 ... # Insert your code here
+```
+```{R}
+library(ggplot2)
+library(tidyr)
+
+long_loadings <- pivot_longer(clean_loadings, cols = everything(), names_to = 'Variable', values_to = 'Loading')
+
+ggplot(long_loadings, aes(x = Variable, y = Loading, fill = Variable)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  coord_flip() + 
+  labs(title = "Factor Loadings Visualization", x = "Principal Component", y = "Loading")
+
+
 ```
 
 ---
@@ -149,6 +215,9 @@ Visualize the factor loadings.
 Based on the factor loadings, what do you think the principal components represent? 
 
 Provide an interpreation for each principal component you chose to keep.
+```{R}
+#Principal component analysis is like finding the best angle to take a collective photo of a group of items so that you can see the most obvious differences at a glance. Each angle, or principal component, reveals a different characteristic between the items: the first angle shows the most fundamental difference, the second angle the second most important difference, and so on.
+```
 
 ---
 
@@ -159,25 +228,44 @@ Create a new data frame with the original response variable `income` and the pri
 ```R
 ... # Insert your code here
 ```
+```{R}
+num_components <- 3 
+
+df_pca <- data.frame(income = df$income, pca$x[, 1:num_components])
+
+
+
+```
 
 Fit a regression model to predict the `income` variable using the principal components you chose to keep. Interpret the coefficients and summarize your results. 
 
 ```R
 ... # Insert your code here
 ```
+```{R}
+model_pca <- lm(income ~ ., data = df_pca)
+
+
+summary(model_pca)
+```
+
 
 Compare the results of the regression model in 1.3 and 1.9. What do you observe? What does this mean for the model?
-
-```R
-... # Insert your code here
+```{R}
+summary(model) 
+summary(model_pca)  
 
 ```
+
 ---
 
 ###### 1.10 (10 points)
 
 Based on your interpretation of the principal components from Question 1.7, provide an interpretation of the regression model in Question 1.9.
 
+```{R}
+#Comparing the results of the two models, I found that the model simplified through principal component analysis predicts revenue very well, and this approach also reduces the number of variables required. While such a model may not be easy to understand intuitively because it is built based on abstract features of the data, it provides us with a more refined and potentially more stable method of prediction.
+```
 
 
 ---
